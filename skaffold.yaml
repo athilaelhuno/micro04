@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/athilaelhuno-gmail-com/micro04:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/athilaelhuno/micro04:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/athilaelhuno-gmail-com/micro04:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/athilaelhuno/micro04:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: micro04
         chartPath: charts/micro04
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/athilaelhuno-gmail-com/micro04'
+          image.repository: '{{.DOCKER_REGISTRY}}/athilaelhuno/micro04'
           image.tag: '{{.DIGEST_HEX}}'
