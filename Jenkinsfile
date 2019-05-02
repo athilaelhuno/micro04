@@ -3,7 +3,7 @@ pipeline {
     label "jenkins-gradle"
   }
   environment {
-    ORG = 'athilaelhuno-gmail-com'
+    ORG = 'athilaelhuno'
     APP_NAME = 'micro04'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
